@@ -1,0 +1,3 @@
+2026-09-03 pending-review surface=hero axis=layout choice=full-bleed-bg reason=user asked clean professional bg image vs split
+2026-09-03 pending-review surface=gallery axis=structure choice=uniform-3col reason=replaced irregular mosaic
+2026-09-03 pending-review surface=nav axis=behavior choice=transparent-over-hero reason=pairs with full-bleed hero
