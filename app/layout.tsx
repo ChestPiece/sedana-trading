@@ -19,7 +19,12 @@ const plexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://sedana-trading.example";
+// Empty string fails `??` and blows `new URL("")` on Vercel when the env var is set blank.
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
+  (process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL.replace(/^https?:\/\//, "")}`
+    : "https://sedana-trading.example");
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
